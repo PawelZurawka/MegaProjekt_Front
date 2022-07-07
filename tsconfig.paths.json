@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "types": [
+        "../MegaProjekt_Back/types"
+      ]
+    }
+  }
+}

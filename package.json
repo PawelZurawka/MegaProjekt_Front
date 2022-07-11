@@ -2,6 +2,9 @@
   "name": "megaprojekt_front",
   "version": "0.1.0",
   "private": true,
+  "repository": "https://github.com/PawelZurawka/MegaProjekt_Front",
+  "author": "Paweł Ż",
+  "license": "MIT",
   "proxy": "http://localhost:3001/api/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",

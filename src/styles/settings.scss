@@ -4,7 +4,7 @@
   --color-text-bright: #fff;
   --color-primary: #3498db;
   --color-secondary: #218c74;
-  --color-background: #fff;
+  --color-background: #c9c1c1;
   --color-icon: #666;
 
   --color-success: #01916d;
@@ -19,14 +19,15 @@
   --color-error-back: #ff5d6c;
 
   --color-textfield-border: #ddd;
+  --color-border: #a7a4a4;
   --color-editor-border: #ccc;
   --color-editor-border-light: #ddd;
 
   --font-navbar: 'Encode Sans Expanded', sans-serif;
   --font-text: 'Source Sans Pro', sans-serif;
 
-  --radius: 5px;
-  --base-size: 14px;
+  --radius: 10px;
+  --base-size: 16px;
   --transition: all 0.5s;
 
   @mixin p-el($element) {

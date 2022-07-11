@@ -1,6 +1,6 @@
 import React from 'react';
 import './navbar.scss';
-import Photo from '../../assets/images/profilephoto.jpg';
+import Photo from '../../assets/images/profile.jpg';
 
 export const Navbar = () => {
   return (

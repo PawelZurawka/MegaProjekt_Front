@@ -15,8 +15,8 @@ export const Navbar = () => {
         <ul className="navbar__center-list">
           <li className="navbar__center-list-item">Home</li>
           <li className="navbar__center-list-item">About</li>
+          <li className="navbar__center-list-item">Add Post</li>
           <li className="navbar__center-list-item">Contact</li>
-          <li className="navbar__center-list-item">Write</li>
           <li className="navbar__center-list-item">Logout</li>
         </ul>
       </div>

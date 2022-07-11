@@ -1,11 +1,11 @@
-import './App.css';
+import {Navbar} from './components/Navbar/Navbar';
 
 function App() {
-  return (
-    <div className="App">
-      MegaProject Front
-    </div>
-  );
+	return (
+		<>
+		<Navbar/>
+		</>
+	);
 }
 
 export default App;

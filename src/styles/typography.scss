@@ -1,0 +1,19 @@
+@import './settings.scss';
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+a {
+  color: var(--color-text-light);
+  transition: .3s;
+
+  &:hover {
+    color: var(--color-text);
+  }
+
+  &.active {
+    color: var(--color-text);
+    border-bottom: 1px solid var(--color-text-light);
+  }
+}

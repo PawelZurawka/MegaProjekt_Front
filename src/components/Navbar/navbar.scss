@@ -6,6 +6,8 @@
   height: 50px;
   position: sticky;
   top: 0;
+  background-color: var(--color-background);
+  z-index: 999;
 
   &__left,
   &__right {
@@ -40,6 +42,7 @@
     font-size: 18px;
     margin-right: 20px;
     cursor: pointer;
+    text-transform: uppercase;
   }
 
   &__right-image {

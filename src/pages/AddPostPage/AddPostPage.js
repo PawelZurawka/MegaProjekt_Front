@@ -33,9 +33,11 @@ export const AddPostPage = () => {
         <div className="add-post-page__form-group">
           <textarea
             className="add-post-page__form-input add-post-page__form-input--textarea"
-            placeholder="Write something interesting"></textarea>
+            placeholder="Write post"></textarea>
         </div>
-        <button className="add-post-page__submit-btn">Add</button>
+        <div className="add-post-page__btn-wrapper">
+          <button className="add-post-page__submit-btn">Add post</button>
+        </div>
       </form>
     </div>
   );

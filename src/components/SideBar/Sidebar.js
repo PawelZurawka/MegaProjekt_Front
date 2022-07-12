@@ -6,7 +6,7 @@ export const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="sidebar__item">
-        <span className="sidebar__item-title">About me</span>
+        <span className="sidebar__item-title">About us</span>
         <img
           className="sidebar__image"
           src={Photo}

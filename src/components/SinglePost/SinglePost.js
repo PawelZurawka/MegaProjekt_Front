@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import './single-post.scss';
 
@@ -16,6 +16,7 @@ export const SinglePost = () => {
       setPost(data);
     })();
   }, [path]);
+
   return (
     <div className="single-post">
       <div className="single-post__wrapper">
@@ -35,7 +36,10 @@ export const SinglePost = () => {
         </h1>
         <div className="single-post__info">
           <span className="single-post__info-author">
-            Author: <b>{username}</b>
+            Author:{' '}
+            <Link to={`/?user=${username}`}>
+              <b>{username}</b>
+            </Link>
           </span>
           <span className="single-post__info-date">{new Date(createdAt).toDateString()}</span>
         </div>

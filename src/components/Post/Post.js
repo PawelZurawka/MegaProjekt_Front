@@ -18,7 +18,11 @@ export const Post = ({ post }) => {
       <div className="post__info">
         <div className="post__categories">
           {categories.map(category => (
-            <span className="post__category">{category}</span>
+            <span
+              className="post__category"
+              key={category.id}>
+              {category.name}
+            </span>
           ))}
         </div>
         <Link to={`/post/${_id}`}>

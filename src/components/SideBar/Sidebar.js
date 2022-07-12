@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Photo from '../../assets/images/sidebar.jpg';
 import { SocialIcons } from '../SocialIcons/SocialIcons';
 
 import './sidebar.scss';
 
 export const Sidebar = () => {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const res = await fetch('/categories');
+      const data = await res.json();
+      setCategories(data);
+    })();
+  }, []);
   return (
     <div className="sidebar">
       <div className="sidebar__item">
@@ -22,12 +31,13 @@ export const Sidebar = () => {
       <div className="sidebar__item">
         <span className="sidebar__item-title">Categories</span>
         <ul className="sidebar__list">
-          <li className="sidebar__list-item">Technology</li>
-          <li className="sidebar__list-item">Fashion</li>
-          <li className="sidebar__list-item">Travel</li>
-          <li className="sidebar__list-item">Sport</li>
-          <li className="sidebar__list-item">Music</li>
-          <li className="sidebar__list-item">Business</li>
+          {categories.map(category => (
+            <li
+              className="sidebar__list-item"
+              key={category.id}>
+              {category.name}
+            </li>
+          ))}
         </ul>
       </div>
       <div className="sidebar__item">

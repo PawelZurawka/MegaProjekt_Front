@@ -16,7 +16,6 @@ export const Post = () => {
           <span className="post__category">Fashion</span>
         </div>
         <span className="post__title">Lorem Ipsum Title</span>
-        <hr />
         <span className="post__date">3 months ago</span>
       </div>
       <p className="post__description">

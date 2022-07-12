@@ -1,12 +1,17 @@
-.contact-page {
+.about-page {
   height: calc(100vh - 50px);
   text-align: center;
   font-size: calc(var(--base-size) * 1.6);
   padding: 30px;
-  background: url('../../assets/images/contact.jpg');
+  background: url('../../assets/images/about.jpg');
 
   &__title {
     margin: 50px;
+  }
+
+  &__paragraph {
+    font-size: calc(var(--base-size) * 1.2);
+    line-height: 1.5;
   }
 
   &__icons-wrapper {

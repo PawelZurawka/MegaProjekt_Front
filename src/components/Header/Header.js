@@ -6,7 +6,7 @@ export const Header = () => {
   return (
     <div className="header">
       <div className="header__titles">
-        <span className="header__title-small">MegaProject</span>
+        <span className="header__title-small">Mega</span>
         <span className="header__title-large">Blog</span>
       </div>
       <img

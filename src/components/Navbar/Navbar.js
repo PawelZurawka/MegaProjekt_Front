@@ -10,7 +10,6 @@ export const Navbar = () => {
     <div className="navbar">
       <div className="navbar__left">
         <i className="navbar__left-icon fa-brands fa-facebook"></i>
-        <i className="navbar__left-icon fa-brands fa-instagram"></i>
         <i className="navbar__left-icon fa-brands fa-twitter"></i>
         <i className="navbar__left-icon fa-brands fa-pinterest"></i>
       </div>

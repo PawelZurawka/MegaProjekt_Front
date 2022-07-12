@@ -5,13 +5,13 @@ export const ContactPage = () => {
   return (
     <div className="contact-page">
       <h1 className="contact-page__title">Contact</h1>
-      <p className="contact-page__paragraph">
+      <p>
         <b>Blog App Ltd.</b>
       </p>
-      <p className="contact-page__paragraph">
+      <p>
         <b>Address:</b> 121 King Street, Melbourne Victoria 3000 Australia
       </p>
-      <p className="contact-page__paragraph">
+      <p>
         <b>E-mail:</b>{' '}
         <a
           href="mailto:blog-app@example.com"
@@ -19,7 +19,7 @@ export const ContactPage = () => {
           blog-app@example.com
         </a>
       </p>
-      <p className="contact-page__paragraph">
+      <p>
         <b>Phone Number:</b> <a href="tel:+54585256758"> +54 585 256 758</a>
       </p>
       <p className="contact-page__icons-wrapper">

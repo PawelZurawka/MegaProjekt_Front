@@ -32,7 +32,6 @@ export const Sidebar = () => {
         <span className="sidebar__item-title">Follow us</span>
         <div className="sidebar__social">
           <i className="sidebar__social-icon fa-brands fa-facebook"></i>
-          <i className="sidebar__social-icon fa-brands fa-instagram"></i>
           <i className="sidebar__social-icon fa-brands fa-twitter"></i>
           <i className="sidebar__social-icon fa-brands fa-pinterest"></i>
         </div>

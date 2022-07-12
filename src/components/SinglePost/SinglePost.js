@@ -1,22 +1,33 @@
-import React from 'react';
-import Photo from '../../assets/images/post.jpg';
+import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import './single-post.scss';
 
 export const SinglePost = () => {
   const location = useLocation();
-  console.log(location);
+  const path = location.pathname.split('/')[2];
+  const [post, setPost] = useState({});
+  const { photo, title, username, createdAt, content } = post;
+
+  useEffect(() => {
+    (async () => {
+      const res = await fetch(`/posts/${path}`);
+      const data = await res.json();
+      setPost(data);
+    })();
+  }, [path]);
   return (
     <div className="single-post">
       <div className="single-post__wrapper">
-        <img
-          className="single-post__image"
-          src={Photo}
-          alt="single-post"
-        />
+        {photo && (
+          <img
+            className="single-post__image"
+            src={photo}
+            alt="single-post"
+          />
+        )}
         <h1 className="single-post__title">
-          Lorem Ipsum Title
+          {title}
           <div className="single-post__edit">
             <i className="single-post__edit-icon fa-solid fa-pen-to-square"></i>
             <i className="single-post__edit-icon fa-solid fa-trash-can"></i>
@@ -24,19 +35,11 @@ export const SinglePost = () => {
         </h1>
         <div className="single-post__info">
           <span className="single-post__info-author">
-            Author: <b>Paweł Ż</b>
+            Author: <b>{username}</b>
           </span>
-          <span className="single-post__info-date">2 months ago</span>
+          <span className="single-post__info-date">{new Date(createdAt).toDateString()}</span>
         </div>
-        <p className="single-post__description">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos iste quibusdam veniam? Alias cum enim quod? Consequuntur deleniti
-          ipsum iure mollitia nisi optio possimus quaerat, ratione reiciendis, saepe sequi. Lorem ipsum dolor sit amet, consectetur
-          adipisicing elit. Ab alias aspernatur debitis dignissimos dolorum eaque esse est et fugit hic inventore iste non nulla odit, quasi
-          quo sit tempora unde. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos iste quibusdam veniam? Alias cum enim quod?
-          Consequuntur deleniti ipsum iure mollitia nisi optio possimus quaerat, ratione reiciendis, saepe sequi. Lorem ipsum dolor sit
-          amet, consectetur adipisicing elit. Ab alias aspernatur debitis dignissimos dolorum eaque esse est et fugit hic inventore iste non
-          nulla odit, quasi quo sit tempora unde.
-        </p>
+        <p className="single-post__description">{content}</p>
       </div>
     </div>
   );

@@ -8,43 +8,4 @@
   &__title {
     margin: 50px;
   }
-
-  &__icons-wrapper {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-  }
-
-  &__icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    font-size: 20px;
-    border: 3px solid var(--color-text-light);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    transition: var(--transition);
-    color: var(--color-text-light);
-    margin: 0 5px;
-  }
-
-  &__twitter:hover {
-    background-color: #4099ff;
-    border: 3px solid #4099ff;
-    color: #fff;
-  }
-
-  &__facebook:hover {
-    background-color: #3b5998;
-    border: 3px solid #3b5998;
-    color: #fff;
-  }
-
-  &__pinterest:hover {
-    background-color: #cb2028;
-    border: 3px solid #cb2028;
-    color: #fff;
-  }
 }

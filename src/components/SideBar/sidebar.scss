@@ -45,18 +45,4 @@
     margin-top: 15px;
     cursor: pointer;
   }
-
-  &__social {
-    margin-top: 15px;
-    width: 250px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  &__social-icon {
-    font-size: var(--base-size);
-    margin-left: 15px;
-    cursor: pointer;
-  }
 }

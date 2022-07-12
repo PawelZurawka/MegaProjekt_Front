@@ -1,4 +1,6 @@
 import React from 'react';
+import { SocialIcons } from '../../components/SocialIcons/SocialIcons';
+
 import './contact-page.scss';
 
 export const ContactPage = () => {
@@ -22,29 +24,7 @@ export const ContactPage = () => {
       <p>
         <b>Phone Number:</b> <a href="tel:+54585256758"> +54 585 256 758</a>
       </p>
-      <p className="contact-page__icons-wrapper">
-        <a
-          href="https://www.facebook.com"
-          rel="noopener noreferrer"
-          target="_blank"
-          className="contact-page__facebook contact-page__icon">
-          <i className="fa-brands fa-facebook-f"></i>
-        </a>
-        <a
-          href="https://www.twitter.com"
-          rel="noopener noreferrer"
-          target="_blank"
-          className="contact-page__twitter contact-page__icon">
-          <i className="fa-brands fa-twitter"></i>
-        </a>
-        <a
-          href="https://www.pinterest.com"
-          rel="noopener noreferrer"
-          target="_blank"
-          className="contact-page__pinterest contact-page__icon">
-          <i className="fa-brands fa-pinterest"></i>
-        </a>
-      </p>
+      <SocialIcons />
     </div>
   );
 };

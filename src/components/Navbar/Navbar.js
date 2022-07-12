@@ -3,15 +3,14 @@ import { Link } from 'react-router-dom';
 
 import './navbar.scss';
 import Photo from '../../assets/images/profile.jpg';
+import { SocialIcons } from '../SocialIcons/SocialIcons';
 
 export const Navbar = () => {
   const user = false;
   return (
     <div className="navbar">
       <div className="navbar__left">
-        <i className="navbar__left-icon fa-brands fa-facebook"></i>
-        <i className="navbar__left-icon fa-brands fa-twitter"></i>
-        <i className="navbar__left-icon fa-brands fa-pinterest"></i>
+        <SocialIcons />
       </div>
       <div className="navbar__center">
         <ul className="navbar__center-list">

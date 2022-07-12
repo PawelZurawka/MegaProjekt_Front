@@ -1,6 +1,8 @@
 import React from 'react';
-import './sidebar.scss';
 import Photo from '../../assets/images/sidebar.jpg';
+import { SocialIcons } from '../SocialIcons/SocialIcons';
+
+import './sidebar.scss';
 
 export const Sidebar = () => {
   return (
@@ -30,11 +32,7 @@ export const Sidebar = () => {
       </div>
       <div className="sidebar__item">
         <span className="sidebar__item-title">Follow us</span>
-        <div className="sidebar__social">
-          <i className="sidebar__social-icon fa-brands fa-facebook"></i>
-          <i className="sidebar__social-icon fa-brands fa-twitter"></i>
-          <i className="sidebar__social-icon fa-brands fa-pinterest"></i>
-        </div>
+        <SocialIcons />
       </div>
     </div>
   );

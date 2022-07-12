@@ -1,4 +1,6 @@
 import React from 'react';
+import { SocialIcons } from '../../components/SocialIcons/SocialIcons';
+
 import './about-page.scss';
 
 export const AboutPage = () => {
@@ -39,29 +41,7 @@ export const AboutPage = () => {
           officiis pariatur placeat quae quos rerum sequi, sunt veritatis.
         </span>
       </p>
-      <p className="about-page__icons-wrapper">
-        <a
-          href="https://www.facebook.com"
-          rel="noopener noreferrer"
-          target="_blank"
-          className="about-page__facebook about-page__icon">
-          <i className="fa-brands fa-facebook-f"></i>
-        </a>
-        <a
-          href="https://www.twitter.com"
-          rel="noopener noreferrer"
-          target="_blank"
-          className="about-page__twitter about-page__icon">
-          <i className="fa-brands fa-twitter"></i>
-        </a>
-        <a
-          href="https://www.pinterest.com"
-          rel="noopener noreferrer"
-          target="_blank"
-          className="about-page__pinterest about-page__icon">
-          <i className="fa-brands fa-pinterest"></i>
-        </a>
-      </p>
+      <SocialIcons />
     </div>
   );
 };

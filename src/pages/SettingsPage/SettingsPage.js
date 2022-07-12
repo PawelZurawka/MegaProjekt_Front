@@ -4,7 +4,7 @@ import Photo from '../../assets/images/profile.jpg';
 
 import './settings-page.scss';
 
-export const SettingPage = () => {
+export const SettingsPage = () => {
   return (
     <div className="settings-page">
       <div className="settings-page__wrapper">
@@ -32,7 +32,7 @@ export const SettingPage = () => {
           <label>Username</label>
           <input
             type="text"
-            placeholder="Username"
+            placeholder="User name"
           />
           <label>Email</label>
           <input
@@ -42,7 +42,7 @@ export const SettingPage = () => {
           <label>Password</label>
           <input
             type="password"
-            placeholder="current password"
+            placeholder="Current password"
           />
           <button
             className="settings-page__form-submit-btn"

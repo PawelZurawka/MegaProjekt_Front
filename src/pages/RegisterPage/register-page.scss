@@ -1,0 +1,53 @@
+.register-page {
+  height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url('../../assets/images/register.jpg');
+  background-size: cover;
+
+  &__title {
+    font-size: 50px;
+    color: var(--color-text-bright);
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+
+    & > label {
+      margin: 10px 0;
+      color: var(--color-text-bright);
+    }
+  }
+
+  &__form-input {
+    background-color: var(--color-background);
+    padding: 10px;
+    border: none;
+  }
+
+  &__form-register-btn {
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: var(--color-secondary);
+    border: none;
+    color: var(--color-text-bright);
+    border-radius: var(--radius);
+    padding: 10px;
+  }
+
+  &__form-login-btn {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: var(--color-primary);
+    cursor: pointer;
+    border: none;
+    color: var(--color-text-bright);
+    border-radius: var(--radius);
+    padding: 10px;
+  }
+}

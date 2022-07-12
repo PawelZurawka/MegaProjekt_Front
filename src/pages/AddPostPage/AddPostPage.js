@@ -25,14 +25,12 @@ export const AddPostPage = () => {
             id="file-input"
             style={{ display: 'none' }}
           />
-          <div className="add-post-page__form-title-wrapper">
-            <input
-              className="add-post-page__form-input add-post-page__form-input--title"
-              type="text"
-              placeholder="Title"
-              autoFocus={true}
-            />
-          </div>
+          <input
+            className="add-post-page__form-input"
+            type="text"
+            placeholder="Title"
+            autoFocus={true}
+          />
         </div>
         <div className="add-post-page__form-group">
           <textarea

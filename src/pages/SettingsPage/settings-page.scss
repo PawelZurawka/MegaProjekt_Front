@@ -1,0 +1,81 @@
+.settings-page {
+  display: flex;
+
+  &__wrapper {
+    flex: 9;
+    padding: 20px;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title-update {
+    font-size: var(--font-size-lg);
+    margin-bottom: 20px;
+    color: var(--color-primary);
+  }
+
+  &__title-delete {
+    color: var(--color-danger);
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+
+    & > label {
+      font-size: var(--font-size-md);
+      margin-top: 20px;
+    }
+    & > input {
+      margin: 10px 0;
+      height: 30px;
+      border: none;
+      border-bottom: 1px solid var(--color-textfield-border);
+    }
+  }
+
+  &__form-profile-picture-wrapper {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+  }
+
+  &__form-profile-picture {
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+
+  &__form-profile-picture-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-left: 10px;
+    background-color: var(--color-primary);
+    color: var(--color-text-bright);
+    cursor: pointer;
+  }
+
+  &__form-submit-btn {
+    color: var(--color-text-bright);
+    background-color: var(--color-primary);
+    padding: 10px;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-size: var(--font-size-md);
+    width: 150px;
+    align-self: center;
+    margin-top: 10px;
+  }
+}

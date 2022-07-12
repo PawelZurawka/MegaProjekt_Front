@@ -1,8 +1,12 @@
 import React from 'react';
 import Photo from '../../assets/images/post.jpg';
+import { useLocation } from 'react-router-dom';
+
 import './single-post.scss';
 
 export const SinglePost = () => {
+  const location = useLocation();
+  console.log(location);
   return (
     <div className="single-post">
       <div className="single-post__wrapper">

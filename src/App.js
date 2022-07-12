@@ -6,6 +6,7 @@ import { LoginPage } from './pages/LoginPage/LoginPage';
 import { AddPostPage } from './pages/AddPostPage/AddPostPage';
 import { SettingsPage } from './pages/SettingsPage/SettingsPage';
 import { SinglePostPage } from './pages/SinglePostPage/SinglePostPage';
+import { ContactPage } from './pages/ContactPage/ContactPage';
 
 function App() {
   const user = false;
@@ -17,6 +18,10 @@ function App() {
           exact
           path="/"
           element={<HomePage />}
+        />
+        <Route
+          path="/contact"
+          element={<ContactPage />}
         />
         <Route
           path="/register"

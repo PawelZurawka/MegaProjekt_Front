@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import './register-page.scss';
 
 export const RegisterPage = () => {
@@ -26,7 +28,9 @@ export const RegisterPage = () => {
         />
         <button className="register-page__form-register-btn">Register</button>
       </form>
-      <button className="register-page__form-login-btn">Login</button>
+      <button className="register-page__form-login-btn">
+        <Link to="/login">Login</Link>
+      </button>
     </div>
   );
 };

@@ -40,7 +40,10 @@ export const SettingPage = () => {
             placeholder="User email"
           />
           <label>Password</label>
-          <input type="password" />
+          <input
+            type="password"
+            placeholder="current password"
+          />
           <button
             className="settings-page__form-submit-btn"
             type="submit">

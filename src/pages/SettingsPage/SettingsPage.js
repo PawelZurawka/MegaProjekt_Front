@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Sidebar } from '../../components/SideBar/Sidebar';
-import Photo from '../../assets/images/profile.jpg';
+import { Context } from '../../context/Context';
 
 import './settings-page.scss';
 
 export const SettingsPage = () => {
+  const { user } = useContext(Context);
+
   return (
     <div className="settings-page">
       <div className="settings-page__wrapper">
@@ -17,7 +19,7 @@ export const SettingsPage = () => {
           <div className="settings-page__form-profile-picture-wrapper">
             <img
               className="settings-page__form-profile-picture"
-              src={Photo}
+              src={user.avatar}
               alt="profile"
             />
             <label htmlFor="file-input">

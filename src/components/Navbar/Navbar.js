@@ -2,12 +2,15 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Context } from '../../context/Context';
 import { SocialIcons } from '../SocialIcons/SocialIcons';
-import Photo from '../../assets/images/profile.jpg';
 
 import './navbar.scss';
-
 export const Navbar = () => {
-  const { user } = useContext(Context);
+  const { user, dispatch } = useContext(Context);
+
+  const handleLogout = () => {
+    dispatch({ type: 'LOGOUT' });
+  };
+
   return (
     <div className="navbar">
       <div className="navbar__left">
@@ -27,14 +30,18 @@ export const Navbar = () => {
           <li className="navbar__center-list-item">
             <Link to="/contact">Contact</Link>
           </li>
-          <li className="navbar__center-list-item">{user && 'Logout'}</li>
+          <li
+            className="navbar__center-list-item"
+            onClick={handleLogout}>
+            {user && 'Logout'}
+          </li>
         </ul>
       </div>
       <div className="navbar__right">
         {user ? (
           <img
             className="navbar__right-image"
-            src={Photo}
+            src={user.avatar}
             alt="profile"
           />
         ) : (

@@ -25,7 +25,7 @@
   &__item-title {
     margin: 10px;
     padding: 5px;
-    width: 100%;
+    width: 80%;
     border-top: 1px solid var(--color-border);
     border-bottom: 1px solid var(--color-border);
     color: #222;
@@ -37,12 +37,16 @@
   &__list {
     list-style: none;
     margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+
+    & a {
+      width: 50%;
+    }
   }
 
   &__list-item {
-    display: inline-block;
-    width: 50%;
-    margin-top: 15px;
+    margin-top: 10px;
     cursor: pointer;
   }
 }

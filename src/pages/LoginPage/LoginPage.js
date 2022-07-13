@@ -19,6 +19,7 @@ export const LoginPage = () => {
           className="login-page__form-input"
           type="password"
           placeholder="Enter your password"
+          autoComplete="off"
         />
         <button className="login-page__form-login-btn">Login</button>
       </form>

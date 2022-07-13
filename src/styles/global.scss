@@ -1,7 +1,5 @@
 @import './settings.scss';
-@import './normalize.scss';
 @import './typography.scss';
-
 *,
 *::before,
 *::after {
@@ -12,7 +10,6 @@ body {
   margin: 0;
   padding: 0;
   //color: var(--color-text-light);
-  background: var(--color-background);
   font-family: var(--font-text);
   font-size: var(--base-size);
   overflow-y: scroll;

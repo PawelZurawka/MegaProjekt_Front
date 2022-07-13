@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Photo from '../../assets/images/sidebar.jpg';
+import { Link } from 'react-router-dom';
+import SidebarPhoto from '../../assets/images/sidebar.jpg';
 import { SocialIcons } from '../SocialIcons/SocialIcons';
 
 import './sidebar.scss';
@@ -20,7 +21,7 @@ export const Sidebar = () => {
         <span className="sidebar__item-title">About us</span>
         <img
           className="sidebar__image"
-          src={Photo}
+          src={SidebarPhoto}
           alt="sidebar"
         />
         <p className="sidebar__item-content">
@@ -32,11 +33,15 @@ export const Sidebar = () => {
         <span className="sidebar__item-title">Categories</span>
         <ul className="sidebar__list">
           {categories.map(category => (
-            <li
-              className="sidebar__list-item"
-              key={category.id}>
-              {category.name}
-            </li>
+            <Link
+              key={category.id}
+              to={`/?category=${category.name}`}>
+              <li
+                key={category.id}
+                className="sidebar__list-item">
+                {category.name}
+              </li>
+            </Link>
           ))}
         </ul>
       </div>

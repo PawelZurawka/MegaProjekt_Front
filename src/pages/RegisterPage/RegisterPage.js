@@ -25,6 +25,7 @@ export const RegisterPage = () => {
           className="register-page__form-input"
           type="password"
           placeholder="Enter your password"
+          autoComplete="off"
         />
         <button className="register-page__form-register-btn">Register</button>
       </form>

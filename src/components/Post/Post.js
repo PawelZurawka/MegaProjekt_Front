@@ -17,11 +17,11 @@ export const Post = ({ post }) => {
       )}
       <div className="post__info">
         <div className="post__categories">
-          {categories.map(category => (
+          {categories.map((category, i) => (
             <span
               className="post__category"
-              key={category.id}>
-              {category.name}
+              key={i}>
+              {category}
             </span>
           ))}
         </div>

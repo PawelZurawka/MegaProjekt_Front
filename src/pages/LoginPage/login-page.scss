@@ -37,6 +37,11 @@
     color: var(--color-text-bright);
     border-radius: var(--radius);
     padding: 10px;
+
+    &:disabled {
+      background-color: var(--color-disabled);
+      cursor: not-allowed;
+    }
   }
 
   &__form__register-btn {

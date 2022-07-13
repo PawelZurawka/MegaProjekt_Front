@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { Context } from '../../context/Context';
+import { SocialIcons } from '../SocialIcons/SocialIcons';
+import Photo from '../../assets/images/profile.jpg';
 
 import './navbar.scss';
-import Photo from '../../assets/images/profile.jpg';
-import { SocialIcons } from '../SocialIcons/SocialIcons';
 
 export const Navbar = () => {
-  const user = false;
+  const { user } = useContext(Context);
   return (
     <div className="navbar">
       <div className="navbar__left">

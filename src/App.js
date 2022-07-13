@@ -8,9 +8,12 @@ import { SettingsPage } from './pages/SettingsPage/SettingsPage';
 import { SinglePostPage } from './pages/SinglePostPage/SinglePostPage';
 import { ContactPage } from './pages/ContactPage/ContactPage';
 import { AboutPage } from './pages/AboutPage/AboutPage';
+import { useContext } from 'react';
+import { Context } from './context/Context';
 
 function App() {
-  const user = false;
+  const { user } = useContext(Context);
+
   return (
     <BrowserRouter>
       <Navbar />

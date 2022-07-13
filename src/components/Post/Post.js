@@ -1,17 +1,19 @@
 import React from 'react';
-import Photo from '../../assets/images/post.jpg';
 import { Link } from 'react-router-dom';
 
 import './post.scss';
 
 export const Post = ({ post }) => {
   const { photo, title, _id, createdAt, content, categories } = post;
+
+  const publicFolder = 'http://localhost:3001/images/';
+
   return (
     <div className="post">
       {photo && (
         <img
           className="post__image"
-          src={Photo}
+          src={`${publicFolder}${photo}`}
           alt="post"
         />
       )}

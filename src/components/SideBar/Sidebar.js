@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import SidebarPhoto from '../../assets/images/sidebar.jpg';
 import { SocialIcons } from '../SocialIcons/SocialIcons';
 
@@ -9,12 +10,13 @@ export const Sidebar = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    (async () => {
-      const res = await fetch('/categories');
-      const data = await res.json();
-      setCategories(data);
-    })();
+    const getCategories = async () => {
+      const res = await axios.get('/categories');
+      setCategories(res.data);
+    };
+    void getCategories();
   }, []);
+
   return (
     <div className="sidebar">
       <div className="sidebar__item">

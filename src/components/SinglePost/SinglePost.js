@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import axios from 'axios';
 
 import './single-post.scss';
 
@@ -10,11 +11,11 @@ export const SinglePost = () => {
   const { photo, title, username, createdAt, content } = post;
 
   useEffect(() => {
-    (async () => {
-      const res = await fetch(`/posts/${path}`);
-      const data = await res.json();
-      setPost(data);
-    })();
+    const getPost = async () => {
+      const res = await axios.get(`/posts/${path}`);
+      setPost(res.data);
+    };
+    void getPost();
   }, [path]);
 
   return (

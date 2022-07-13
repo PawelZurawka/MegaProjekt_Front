@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { Header } from '../../components/Header/Header';
 import { Posts } from '../../components/Posts/Posts';
 import { Sidebar } from '../../components/SideBar/Sidebar';
@@ -11,11 +12,11 @@ export const HomePage = () => {
   const { search } = useLocation();
 
   useEffect(() => {
-    (async () => {
-      const res = await fetch(`/posts/${search}`);
-      const data = await res.json();
-      setPosts(data);
-    })();
+    const getPosts = async () => {
+      const res = await axios.get(`/posts/${search}`);
+      setPosts(res.data);
+    };
+    void getPosts();
   }, [search]);
 
   return (

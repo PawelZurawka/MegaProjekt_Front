@@ -4,6 +4,7 @@ import { Context } from '../../context/Context';
 import { SocialIcons } from '../SocialIcons/SocialIcons';
 
 import './navbar.scss';
+
 export const Navbar = () => {
   const { user, dispatch } = useContext(Context);
 
@@ -39,11 +40,13 @@ export const Navbar = () => {
       </div>
       <div className="navbar__right">
         {user ? (
-          <img
-            className="navbar__right-image"
-            src={user.avatar}
-            alt="profile"
-          />
+          <Link to="/settings">
+            <img
+              className="navbar__right-image"
+              src={user.avatar}
+              alt="profile"
+            />
+          </Link>
         ) : (
           <ul className="navbar__center-list">
             <li className="navbar__center-list-item">

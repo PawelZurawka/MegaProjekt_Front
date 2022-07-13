@@ -13,7 +13,7 @@ export const Post = ({ post }) => {
       {photo && (
         <img
           className="post__image"
-          src={`${publicFolder}${photo}`}
+          src={`${publicFolder}/${photo}`}
           alt="post"
         />
       )}

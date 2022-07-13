@@ -3,6 +3,8 @@
 
   &__wrapper {
     padding: 20px 0 20px 20px;
+    display: flex;
+    flex-direction: column;
   }
 
   &__image {
@@ -16,6 +18,19 @@
     text-align: center;
     margin: 10px;
     font-size: var(--font-size-vlg);
+  }
+
+  &__title-input {
+    text-align: center;
+    margin: 30px;
+    font-size: var(--font-size-vlg);
+    border: none;
+    color: var(--color-icon);
+    border-bottom: 1px solid var(--color-border);
+
+    &:focus {
+      outline: none;
+    }
   }
 
   &__edit {
@@ -53,5 +68,21 @@
       font-size: var(--font-size-vlg);
       font-weight: 600;
     }
+  }
+  &__description-input {
+    font-size: var(--font-size-lg);
+    line-height: 1.5;
+  }
+
+  &__btn {
+    align-self: center;
+    width: 75px;
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: var(--color-primary);
+    border: none;
+    color: var(--color-text-bright);
+    border-radius: var(--radius);
+    padding: 10px;
   }
 }

@@ -2,9 +2,9 @@ import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import { Context } from '../../context/Context';
 import { Sidebar } from '../../components/SideBar/Sidebar';
+import { PUBLIC_FOLDER } from '../../config/config';
 
 import './settings-page.scss';
-import { PUBLIC_FOLDER } from '../../config/config';
 
 export const SettingsPage = () => {
   const [file, setFile] = useState(null);
@@ -75,7 +75,8 @@ export const SettingsPage = () => {
           <label>Username</label>
           <input
             required
-            minLength="3"
+            minLength="2"
+            maxLength="50"
             type="text"
             placeholder={user.username}
             onChange={e => setUsername(e.target.value)}
@@ -83,6 +84,8 @@ export const SettingsPage = () => {
           <label>Email</label>
           <input
             required
+            minLength="2"
+            maxLength="50"
             type="email"
             placeholder={user.email}
             onChange={e => setEmail(e.target.value)}
@@ -90,6 +93,8 @@ export const SettingsPage = () => {
           <label>Password</label>
           <input
             required
+            minLength="4"
+            maxLength="150"
             type="password"
             placeholder="New password"
             autoComplete="off"

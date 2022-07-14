@@ -32,6 +32,9 @@ export const LoginPage = () => {
         onSubmit={handleSubmit}>
         <label>User name</label>
         <input
+          required
+          minLength="2"
+          maxLength="50"
           className="login-page__form-input"
           type="text"
           placeholder="Enter your user name"
@@ -39,6 +42,9 @@ export const LoginPage = () => {
         />
         <label>Password</label>
         <input
+          required
+          minLength="4"
+          maxLength="150"
           className="login-page__form-input"
           type="password"
           placeholder="Enter your password"

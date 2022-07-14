@@ -33,6 +33,9 @@ export const RegisterPage = () => {
         onSubmit={handleSubmit}>
         <label>User name</label>
         <input
+          required
+          minLength="2"
+          maxLength="50"
           className="register-page__form-input"
           type="text"
           placeholder="Enter your user name"
@@ -40,6 +43,9 @@ export const RegisterPage = () => {
         />
         <label>Email</label>
         <input
+          required
+          minLength="5"
+          maxLength="50"
           className="register-page__form-input"
           type="email"
           placeholder="Enter your email"
@@ -47,6 +53,9 @@ export const RegisterPage = () => {
         />
         <label>Password</label>
         <input
+          required
+          minLength="4"
+          maxLength="150"
           className="register-page__form-input"
           type="password"
           placeholder="Enter your password"

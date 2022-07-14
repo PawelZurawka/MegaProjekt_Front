@@ -10,7 +10,6 @@ import './home.scss';
 export const HomePage = () => {
   const [posts, setPosts] = useState([]);
   const { search } = useLocation();
-  console.log(search);
   useEffect(() => {
     const getPosts = async () => {
       const res = await axios.get(`/posts/${search}`);

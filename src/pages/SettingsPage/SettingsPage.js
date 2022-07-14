@@ -14,7 +14,6 @@ export const SettingsPage = () => {
   const [success, setSuccess] = useState(false);
 
   const { user, dispatch } = useContext(Context);
-
   const handleUpdate = async e => {
     e.preventDefault();
     dispatch({ type: 'UPDATE_START' });
@@ -45,12 +44,29 @@ export const SettingsPage = () => {
     }
   };
 
+  const handleDelete = async () => {
+    const deletedUser = {
+      userId: user._id,
+    };
+    try {
+      await axios.delete(`users/${user._id}`, { data: deletedUser });
+      dispatch({ type: 'LOGOUT' });
+      window.location.replace('/');
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div className="settings-page">
       <div className="settings-page__wrapper">
         <div className="settings-page__title">
           <span className="settings-page__title-update">Update your account</span>
-          <span className="settings-page__title-delete">Delete account</span>
+          <span
+            className="settings-page__title-delete"
+            onClick={handleDelete}>
+            Delete account
+          </span>
         </div>
         <form
           className="settings-page__form"
@@ -66,7 +82,7 @@ export const SettingsPage = () => {
             ) : (
               <img
                 className="settings-page__form-profile-picture"
-                src={`${PUBLIC_FOLDER}/default-profile-picture.jpg`}
+                src={file ? URL.createObjectURL(file) : `${PUBLIC_FOLDER}/default-profile-picture.jpg`}
                 alt="profile"
               />
             )}

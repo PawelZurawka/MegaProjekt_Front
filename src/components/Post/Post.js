@@ -2,18 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import './post.scss';
+import { PUBLIC_FOLDER } from '../../config/config';
 
 export const Post = ({ post }) => {
   const { photo, title, _id, createdAt, content, categories } = post;
-
-  const publicFolder = 'http://localhost:3001/images/';
 
   return (
     <div className="post">
       {photo && (
         <img
           className="post__image"
-          src={`${publicFolder}/${photo}`}
+          src={`${PUBLIC_FOLDER}/${photo}`}
           alt="post"
         />
       )}

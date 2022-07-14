@@ -4,13 +4,13 @@ import axios from 'axios';
 import { Context } from '../../context/Context';
 
 import './single-post.scss';
+import { PUBLIC_FOLDER } from '../../config/config';
 
 export const SinglePost = () => {
   const location = useLocation();
   const path = location.pathname.split('/')[2];
   const [post, setPost] = useState({});
   const { photo, username, createdAt } = post;
-  const publicFolder = 'http://localhost:3001/images/';
   const { user } = useContext(Context);
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
@@ -50,7 +50,7 @@ export const SinglePost = () => {
         {photo && (
           <img
             className="single-post__image"
-            src={`${publicFolder}/${photo}`}
+            src={`${PUBLIC_FOLDER}/${photo}`}
             alt="single-post"
           />
         )}

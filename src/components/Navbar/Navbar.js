@@ -4,6 +4,7 @@ import { Context } from '../../context/Context';
 import { SocialIcons } from '../SocialIcons/SocialIcons';
 
 import './navbar.scss';
+import { PUBLIC_FOLDER } from '../../config/config';
 
 export const Navbar = () => {
   const { user, dispatch } = useContext(Context);
@@ -43,7 +44,7 @@ export const Navbar = () => {
           <Link to="/settings">
             <img
               className="navbar__right-image"
-              src={user.avatar}
+              src={`${PUBLIC_FOLDER}${user.profilePicture}`}
               alt="profile"
             />
           </Link>

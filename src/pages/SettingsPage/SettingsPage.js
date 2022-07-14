@@ -4,17 +4,20 @@ import { Context } from '../../context/Context';
 import { Sidebar } from '../../components/SideBar/Sidebar';
 
 import './settings-page.scss';
+import { PUBLIC_FOLDER } from '../../config/config';
 
 export const SettingsPage = () => {
   const [file, setFile] = useState(null);
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [success, setSuccess] = useState(false);
 
-  const { user } = useContext(Context);
+  const { user, dispatch } = useContext(Context);
 
   const handleUpdate = async e => {
     e.preventDefault();
+    dispatch({ type: 'UPDATE_START' });
     const updatedUser = {
       userId: user._id,
       username,
@@ -26,7 +29,7 @@ export const SettingsPage = () => {
       const filename = Date.now() + file.name;
       data.append('name', filename);
       data.append('file', file);
-      updatedUser.avatar = filename;
+      updatedUser.profilePicture = filename;
       try {
         await axios.post('/upload', data);
       } catch (err) {
@@ -34,9 +37,11 @@ export const SettingsPage = () => {
       }
     }
     try {
-      await axios.put(`/users/${user._id}`, updatedUser);
+      const res = await axios.put(`/users/${user._id}`, updatedUser);
+      setSuccess(true);
+      dispatch({ type: 'UPDATE_SUCCESS', payload: res.data });
     } catch (err) {
-      console.log(err);
+      dispatch({ type: 'UPDATE_FAILURE' });
     }
   };
 
@@ -54,7 +59,7 @@ export const SettingsPage = () => {
           <div className="settings-page__form-profile-picture-wrapper">
             <img
               className="settings-page__form-profile-picture"
-              src={user.avatar}
+              src={file ? URL.createObjectURL(file) : `${PUBLIC_FOLDER}${user.profilePicture}`}
               alt="profile"
             />
             <label htmlFor="file-input">
@@ -69,20 +74,24 @@ export const SettingsPage = () => {
           </div>
           <label>Username</label>
           <input
+            required
+            minLength="3"
             type="text"
             placeholder={user.username}
             onChange={e => setUsername(e.target.value)}
           />
           <label>Email</label>
           <input
+            required
             type="email"
             placeholder={user.email}
             onChange={e => setEmail(e.target.value)}
           />
           <label>Password</label>
           <input
+            required
             type="password"
-            placeholder="Current password"
+            placeholder="New password"
             autoComplete="off"
             onChange={e => setPassword(e.target.value)}
           />
@@ -91,6 +100,7 @@ export const SettingsPage = () => {
             type="submit">
             Update
           </button>
+          {success && <span>Profile has been updated</span>}
         </form>
       </div>
       <Sidebar />

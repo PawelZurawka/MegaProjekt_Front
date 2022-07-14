@@ -8,7 +8,7 @@ import './login-page.scss';
 export const LoginPage = () => {
   const userRef = useRef();
   const passwordRef = useRef();
-  const { dispatch, isFetching } = useContext(Context);
+  const { error, dispatch, isFetching } = useContext(Context);
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -61,6 +61,7 @@ export const LoginPage = () => {
       <button className="login-page__form__register-btn">
         <Link to="/register">Register</Link>
       </button>
+      {error && <div className="login-page__error">User name or password is incorrect</div>}
     </div>
   );
 };

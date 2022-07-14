@@ -15,7 +15,6 @@ export const HomePage = () => {
     const getPosts = async () => {
       const res = await axios.get(`/posts/${search}`);
       setPosts(res.data);
-      console.log(res.data);
     };
     void getPosts();
   }, [search]);

@@ -49,7 +49,7 @@ export const SettingsPage = () => {
     <div className="settings-page">
       <div className="settings-page__wrapper">
         <div className="settings-page__title">
-          <span className="settings-page__title-update">Update Your account</span>
+          <span className="settings-page__title-update">Update your account</span>
           <span className="settings-page__title-delete">Delete account</span>
         </div>
         <form

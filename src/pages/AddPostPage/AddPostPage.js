@@ -58,9 +58,10 @@ export const AddPostPage = () => {
             Add photo to post<i className="add-post-page__form-icon fa-solid fa-plus"></i>
           </label>
           <input
+            required
             type="file"
             id="file-input"
-            style={{ display: 'none' }}
+            style={{ opacity: 0 }}
             onChange={e => setFile(e.target.files[0])}
           />
           <input

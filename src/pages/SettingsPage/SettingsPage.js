@@ -57,11 +57,20 @@ export const SettingsPage = () => {
           onSubmit={handleUpdate}>
           <label>Profile picture</label>
           <div className="settings-page__form-profile-picture-wrapper">
-            <img
-              className="settings-page__form-profile-picture"
-              src={file ? URL.createObjectURL(file) : `${PUBLIC_FOLDER}${user.profilePicture}`}
-              alt="profile"
-            />
+            {user.profilePicture ? (
+              <img
+                className="settings-page__form-profile-picture"
+                src={file ? URL.createObjectURL(file) : `${PUBLIC_FOLDER}${user.profilePicture}`}
+                alt="profile"
+              />
+            ) : (
+              <img
+                className="settings-page__form-profile-picture"
+                src={`${PUBLIC_FOLDER}/default-profile-picture.jpg`}
+                alt="profile"
+              />
+            )}
+
             <label htmlFor="file-input">
               <i className="settings-page__form-profile-picture-icon fa-solid fa-user"></i>
             </label>

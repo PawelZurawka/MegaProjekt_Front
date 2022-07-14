@@ -42,11 +42,19 @@ export const Navbar = () => {
       <div className="navbar__right">
         {user ? (
           <Link to="/settings">
-            <img
-              className="navbar__right-image"
-              src={`${PUBLIC_FOLDER}${user.profilePicture}`}
-              alt="profile"
-            />
+            {user.profilePicture ? (
+              <img
+                className="navbar__right-image"
+                src={`${PUBLIC_FOLDER}${user.profilePicture}`}
+                alt="profile"
+              />
+            ) : (
+              <img
+                className="navbar__right-image"
+                src={`${PUBLIC_FOLDER}/default-profile-picture.jpg`}
+                alt="profile"
+              />
+            )}
           </Link>
         ) : (
           <ul className="navbar__center-list">

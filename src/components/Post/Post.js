@@ -10,22 +10,26 @@ export const Post = ({ post }) => {
   return (
     <div className="post">
       {photo && (
-        <img
-          className="post__image"
-          src={`${PUBLIC_FOLDER}/${photo}`}
-          alt="post"
-        />
+        <Link to={`/post/${_id}`}>
+          <img
+            className="post__image"
+            src={`${PUBLIC_FOLDER}/${photo}`}
+            alt="post"
+          />
+        </Link>
       )}
       <div className="post__info">
-        <div className="post__categories">
-          {categories.map((category, i) => (
-            <span
-              className="post__category"
-              key={i}>
-              {category}
-            </span>
-          ))}
-        </div>
+        <Link to={`/?category=${post.categories}`}>
+          <div className="post__categories">
+            {categories.map((category, i) => (
+              <span
+                className="post__category"
+                key={i}>
+                {category}
+              </span>
+            ))}
+          </div>
+        </Link>
         <Link to={`/post/${_id}`}>
           <span className="post__title">{title}</span>
         </Link>

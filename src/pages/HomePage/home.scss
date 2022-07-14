@@ -1,3 +1,10 @@
 .home {
   display: flex;
+
+  &__posts-error {
+    display: flex;
+    flex: 9;
+    align-items: center;
+    justify-content: center;
+  }
 }

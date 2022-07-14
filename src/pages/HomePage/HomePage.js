@@ -10,7 +10,7 @@ import './home.scss';
 export const HomePage = () => {
   const [posts, setPosts] = useState([]);
   const { search } = useLocation();
-
+  console.log(search);
   useEffect(() => {
     const getPosts = async () => {
       const res = await axios.get(`/posts/${search}`);
@@ -23,7 +23,7 @@ export const HomePage = () => {
     <>
       <Header />
       <div className="home">
-        <Posts posts={posts} />
+        {posts.length > 0 ? <Posts posts={posts} /> : <h1 className="home__posts-error">No posts found in {search.slice(10)} category</h1>}
         <Sidebar />
       </div>
     </>

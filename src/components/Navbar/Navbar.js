@@ -66,7 +66,6 @@ export const Navbar = () => {
             </li>
           </ul>
         )}
-        <i className="navbar__right-search-icon fa-solid fa-magnifying-glass"></i>
       </div>
     </div>
   );

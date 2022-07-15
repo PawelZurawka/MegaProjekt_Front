@@ -10,7 +10,7 @@ export const SinglePost = () => {
   const location = useLocation();
   const path = location.pathname.split('/')[2];
   const [post, setPost] = useState({});
-  const { photo, username, createdAt } = post;
+  const { photo, username, createdAt, categories } = post;
   const { user } = useContext(Context);
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
@@ -82,6 +82,12 @@ export const SinglePost = () => {
             Author:{' '}
             <Link to={`/?user=${username}`}>
               <b>{username}</b>
+            </Link>
+          </span>
+          <span className="single-post__info-author">
+            Category:{' '}
+            <Link to={`/?category=${categories}`}>
+              <b>{categories}</b>
             </Link>
           </span>
           <span className="single-post__info-date">{new Date(createdAt).toDateString()}</span>

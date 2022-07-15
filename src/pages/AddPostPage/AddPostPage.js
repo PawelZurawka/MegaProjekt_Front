@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { Context } from '../../context/Context';
 
@@ -10,6 +10,16 @@ export const AddPostPage = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [file, setFile] = useState(null);
+  const [categories, setCategories] = useState([]);
+  const [category, setCategory] = useState('');
+
+  useEffect(() => {
+    const getCategories = async () => {
+      const res = await axios.get(`/categories`);
+      setCategories(res.data);
+    };
+    void getCategories();
+  }, []);
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -17,7 +27,9 @@ export const AddPostPage = () => {
       username: user.username,
       title,
       content,
+      categories: category,
     };
+
     if (file) {
       const data = new FormData();
       const filename = Date.now() + file.name;
@@ -64,6 +76,22 @@ export const AddPostPage = () => {
             style={{ opacity: 0 }}
             onChange={e => setFile(e.target.files[0])}
           />
+          <label htmlFor="categories">Choose a category:</label>
+          <select
+            defaultValue={'default'}
+            name="categories"
+            onChange={e => setCategory(e.target.value)}>
+            <option
+              value="default"
+              disabled></option>
+            {categories.map(category => (
+              <option
+                key={category.id}
+                value={category.name}>
+                {category.name}
+              </option>
+            ))}
+          </select>
           <input
             className="add-post-page__form-input"
             type="text"

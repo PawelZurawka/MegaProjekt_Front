@@ -1,11 +1,10 @@
 :root {
-  --color-text: #333;
+  --color-text: #2a2828;
   --color-text-light: #444;
   --color-text-bright: #fff;
-  --color-primary: #3498db;
+  --color-primary: #ada82b;
   --color-secondary: #218c74;
-  --color-background: #c9c1c1;
-  //--color-background: #fff;
+  --color-background: #ada82b;
   --color-icon: #666;
 
   --color-disabled: #7eb4d2;
@@ -21,13 +20,10 @@
   --color-error-back: #ff5d6c;
 
   --color-textfield-border: #ddd;
-  --color-border: #a7a4a4;
-  --color-editor-border: #ccc;
-  --color-editor-border-light: #ddd;
+  --color-border: #000;
 
-  --font-navbar: 'Encode Sans Expanded', sans-serif;
-  //--font-text: 'Source Sans Pro', sans-serif;
-  --font-text: 'Roboto', sans-serif;
+  --font-navbar: 'Anton', sans-serif;
+  --font-text: 'Ibarra Real Nova', serif;
   --font-size-sm: 0.8rem;
   --font-size-md: 1rem;
   --font-size-lg: 1.5rem;

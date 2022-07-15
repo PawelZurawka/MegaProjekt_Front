@@ -48,7 +48,7 @@ export const Sidebar = () => {
         </ul>
       </div>
       <div className="sidebar__item">
-        <span className="sidebar__item-title">Follow us</span>
+        <span className="sidebar__item-title-social sidebar__item-title">Follow us</span>
         <SocialIcons />
       </div>
     </div>

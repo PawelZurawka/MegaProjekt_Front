@@ -84,7 +84,7 @@ export const SinglePost = () => {
               <b>{username}</b>
             </Link>
           </span>
-          <span className="single-post__info-author">
+          <span className="single-post__info-category">
             Category:{' '}
             <Link to={`/?category=${categories}`}>
               <b>{categories}</b>
@@ -94,6 +94,7 @@ export const SinglePost = () => {
         </div>
         {update ? (
           <textarea
+            rows="6"
             className="single-post__description-input"
             value={content}
             onChange={e => setContent(e.target.value)}

@@ -10,10 +10,14 @@
 
   &__image {
     margin-top: 15px;
+    width: 80%;
   }
 
   &__item-content {
+    font-size: calc(var(--font-size-md) * 1.1);
+    width: 80%;
     padding: 20px;
+    margin-bottom: 0;
   }
 
   &__item {
@@ -23,7 +27,7 @@
   }
 
   &__item-title {
-    margin: 10px;
+    margin: 20px 0 10px 0;
     padding: 5px;
     width: 80%;
     border-top: 1px solid var(--color-border);
@@ -32,6 +36,12 @@
     font-weight: 600;
     line-height: 20px;
     text-align: center;
+    font-size: var(--font-size-lg);
+
+    &-social {
+      margin-bottom: 20px;
+      width: 100%;
+    }
   }
 
   &__list {
@@ -48,6 +58,7 @@
   }
 
   &__list-item {
+    font-size: calc(var(--font-size-md) * 1.1);
     margin-top: 10px;
     cursor: pointer;
   }

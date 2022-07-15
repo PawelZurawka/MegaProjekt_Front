@@ -1,5 +1,5 @@
 .post {
-  width: 385px;
+  width: 400px;
   margin: 0 25px 40px 25px;
 
   &__image {
@@ -16,7 +16,7 @@
   }
 
   &__category {
-    font-size: 11px;
+    font-size: var(--font-size-sm);
     color: var(--color-primary);
     line-height: 20px;
     margin-top: 15px;
@@ -25,10 +25,13 @@
   }
 
   &__title {
-    font-size: 24px;
+    font-size: var(--font-size-lg);
     font-weight: 700;
-    margin-top: 15px;
+    margin-top: 5px;
     cursor: pointer;
+    &:hover {
+      color: var(--color-primary);
+    }
   }
 
   &__date {
@@ -39,7 +42,7 @@
   }
 
   &__description {
-    font-size: 14px;
+    font-size: var(--font-size-md);
     color: var(--color-text-light);
     line-height: 24px;
     overflow: hidden;

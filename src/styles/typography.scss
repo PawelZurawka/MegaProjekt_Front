@@ -1,15 +1,28 @@
 @import './settings.scss';
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
+}
+
+button {
+  font-family: var(--font-text);
+  font-size: var(--base-size);
+  transition: 0.75s;
+  &:hover {
+    color: var(--color-text-bright);
+  }
 }
 
 a {
   color: var(--color-text-light);
-  transition: .3s;
-
+  transition: 0.75s;
   &:hover {
-    color: var(--color-text);
+    color: var(--color-text-bright);
   }
 
   &.active {

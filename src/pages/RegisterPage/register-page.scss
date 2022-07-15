@@ -8,7 +8,7 @@
   background-size: cover;
 
   &__title {
-    font-size: 50px;
+    font-size: calc(var(--font-size-vlg) * 1.8);
     color: var(--color-text-bright);
   }
 
@@ -20,6 +20,7 @@
     & > label {
       margin: 10px 0;
       color: var(--color-text-bright);
+      font-weight: bold;
     }
   }
 
@@ -34,9 +35,10 @@
     cursor: pointer;
     background-color: var(--color-secondary);
     border: none;
-    color: var(--color-text-bright);
+    color: var(--color-text);
     border-radius: var(--radius);
     padding: 10px;
+    font-weight: bold;
   }
 
   &__form-login-btn {
@@ -46,12 +48,13 @@
     background-color: var(--color-primary);
     cursor: pointer;
     border: none;
-    color: var(--color-text-bright);
+    color: var(--color-text);
     border-radius: var(--radius);
     padding: 10px;
+    font-weight: bold;
 
     & > a {
-      color: var(--color-text-bright);
+      color: var(--color-text);
     }
   }
   &__form-error-info {

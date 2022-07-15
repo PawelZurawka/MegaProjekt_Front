@@ -30,8 +30,10 @@ export const Post = ({ post }) => {
             ))}
           </div>
         </Link>
-        <Link to={`/post/${_id}`}>
-          <span className="post__title">{title}</span>
+        <Link
+          className="post__title"
+          to={`/post/${_id}`}>
+          {title}
         </Link>
         <span className="post__date">{new Date(createdAt).toDateString()}</span>
       </div>

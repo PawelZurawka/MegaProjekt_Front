@@ -8,7 +8,7 @@
   background-size: cover;
 
   &__title {
-    font-size: 50px;
+    font-size: calc(var(--font-size-vlg) * 1.8);
     color: var(--color-text-bright);
   }
 
@@ -20,6 +20,7 @@
     & > label {
       margin: 10px 0;
       color: var(--color-text-bright);
+      font-weight: bold;
     }
   }
 
@@ -34,9 +35,10 @@
     cursor: pointer;
     background-color: var(--color-primary);
     border: none;
-    color: var(--color-text-bright);
+    color: var(--color-text);
     border-radius: var(--radius);
     padding: 10px;
+    font-weight: bold;
 
     &:disabled {
       background-color: var(--color-disabled);
@@ -51,21 +53,23 @@
     background-color: var(--color-secondary);
     cursor: pointer;
     border: none;
-    color: var(--color-text-bright);
+    color: var(--color-text);
     border-radius: var(--radius);
     padding: 10px;
+    font-weight: bold;
 
     & > a {
-      color: var(--color-text-bright);
+      color: var(--color-text);
     }
   }
   &__error {
     position: absolute;
     padding: 10px;
     bottom: 240px;
-    color: var(--color-text-bright);
+    color: var(--color-text);
     background-color: var(--color-warning);
     font-size: calc(var(--base-size));
     border-radius: var(--radius);
+    font-weight: bold;
   }
 }

@@ -20,7 +20,7 @@
 
   &__title-delete {
     color: var(--color-danger);
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-md);
     cursor: pointer;
   }
 
@@ -49,7 +49,7 @@
   &__form-profile-picture {
     width: 70px;
     height: 70px;
-    border-radius: 20px;
+    border-radius: calc(var(--radius) * 2);
     object-fit: cover;
   }
 
@@ -67,7 +67,6 @@
   }
 
   &__form-submit-btn {
-    color: var(--color-text-bright);
     background-color: var(--color-primary);
     padding: 10px;
     border: none;
@@ -76,6 +75,7 @@
     font-size: var(--font-size-md);
     width: 150px;
     align-self: center;
-    margin-top: 10px;
+    margin-top: 15px;
+    font-weight: bold;
   }
 }

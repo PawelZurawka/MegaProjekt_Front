@@ -76,7 +76,11 @@ export const AddPostPage = () => {
             style={{ opacity: 0 }}
             onChange={e => setFile(e.target.files[0])}
           />
-          <label htmlFor="categories">Choose a category:</label>
+          <label
+            htmlFor="categories"
+            className="add-post-page__category-label">
+            Select a category:
+          </label>
           <select
             defaultValue={'default'}
             name="categories"

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import SidebarPhoto from '../../assets/images/sidebar.jpg';
 import { SocialIcons } from '../SocialIcons/SocialIcons';
+import { apiUrl } from '../../config/api';
 
 import './sidebar.scss';
 
@@ -11,7 +12,7 @@ export const Sidebar = () => {
 
   useEffect(() => {
     const getCategories = async () => {
-      const res = await axios.get('/categories');
+      const res = await axios.get(`${apiUrl}/categories`);
       setCategories(res.data);
     };
     void getCategories();

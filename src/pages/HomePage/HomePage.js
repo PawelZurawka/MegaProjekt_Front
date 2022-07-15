@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { Header } from '../../components/Header/Header';
 import { Posts } from '../../components/Posts/Posts';
 import { Sidebar } from '../../components/SideBar/Sidebar';
+import { apiUrl } from '../../config/api';
 
 import './home.scss';
 
@@ -12,7 +13,7 @@ export const HomePage = () => {
   const { search } = useLocation();
   useEffect(() => {
     const getPosts = async () => {
-      const res = await axios.get(`/posts/${search}`);
+      const res = await axios.get(`${apiUrl}/posts/${search}`);
       setPosts(res.data);
     };
     void getPosts();

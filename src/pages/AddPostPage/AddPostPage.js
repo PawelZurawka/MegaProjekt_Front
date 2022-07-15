@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { Context } from '../../context/Context';
+import { apiUrl } from '../../config/api';
 
 import './add-post-page.scss';
 
@@ -15,7 +16,7 @@ export const AddPostPage = () => {
 
   useEffect(() => {
     const getCategories = async () => {
-      const res = await axios.get(`/categories`);
+      const res = await axios.get(`${apiUrl}/categories`);
       setCategories(res.data);
     };
     void getCategories();
@@ -37,14 +38,14 @@ export const AddPostPage = () => {
       data.append('file', file);
       newPost.photo = filename;
       try {
-        await axios.post('/upload', data);
+        await axios.post(`${apiUrl}/upload`, data);
       } catch (err) {
         console.log(err);
       }
     }
     try {
-      const res = await axios.post('/posts', newPost);
-      window.location.replace('/post/' + res.data._id);
+      const res = await axios.post(`${apiUrl}/posts`, newPost);
+      window.location.replace(`${apiUrl}/post/` + res.data._id);
     } catch (err) {
       console.log(err);
     }

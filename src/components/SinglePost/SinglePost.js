@@ -2,9 +2,10 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { Context } from '../../context/Context';
+import { apiUrl } from '../../config/api';
+import { PUBLIC_FOLDER } from '../../config/config';
 
 import './single-post.scss';
-import { PUBLIC_FOLDER } from '../../config/config';
 
 export const SinglePost = () => {
   const location = useLocation();
@@ -18,7 +19,7 @@ export const SinglePost = () => {
 
   useEffect(() => {
     const getPost = async () => {
-      const res = await axios.get(`/posts/${path}`);
+      const res = await axios.get(`${apiUrl}/posts/${path}`);
       setPost(res.data);
       setTitle(res.data.title);
       setContent(res.data.content);
@@ -28,7 +29,7 @@ export const SinglePost = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`/posts/${path}`, { data: { username: user.username } });
+      await axios.delete(`${apiUrl}/posts/${path}`, { data: { username: user.username } });
       window.location.replace('/');
     } catch (err) {
       console.log(err);
@@ -37,7 +38,7 @@ export const SinglePost = () => {
 
   const handleUpdate = async () => {
     try {
-      await axios.put(`/posts/${post._id}`, { username: user.username, title, content });
+      await axios.put(`${apiUrl}/posts/${post._id}`, { username: user.username, title, content });
       setUpdate(false);
     } catch (err) {
       console.log(err);

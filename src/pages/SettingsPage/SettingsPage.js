@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Context } from '../../context/Context';
 import { Sidebar } from '../../components/SideBar/Sidebar';
 import { PUBLIC_FOLDER } from '../../config/config';
+import { apiUrl } from '../../config/api';
 
 import './settings-page.scss';
 
@@ -30,13 +31,13 @@ export const SettingsPage = () => {
       data.append('file', file);
       updatedUser.profilePicture = filename;
       try {
-        await axios.post('/upload', data);
+        await axios.post(`${apiUrl}/upload`, data);
       } catch (err) {
         console.log(err);
       }
     }
     try {
-      const res = await axios.put(`/users/${user._id}`, updatedUser);
+      const res = await axios.put(`${apiUrl}/users/${user._id}`, updatedUser);
       setSuccess(true);
       dispatch({ type: 'UPDATE_SUCCESS', payload: res.data });
     } catch (err) {
@@ -49,7 +50,7 @@ export const SettingsPage = () => {
       userId: user._id,
     };
     try {
-      await axios.delete(`users/${user._id}`, { data: deletedUser });
+      await axios.delete(`/${apiUrl}users/${user._id}`, { data: deletedUser });
       dispatch({ type: 'LOGOUT' });
       window.location.replace('/');
     } catch (err) {
